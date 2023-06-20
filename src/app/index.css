@@ -14,12 +14,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.Header{
-  background-color: #010409;
-  height: 100px;
-  width: 100%;
-  content: "";
-}
 .Container{
   box-sizing: border-box;
   padding: 20px 100px;

@@ -1,9 +1,10 @@
 import {withProviders} from "./providers";
 import {Routing} from "../pages";
+import Header from "../widgets/Header/Header";
 
 const App = () => {
     return <div>
-        <div className={'Header'}/>
+        <Header/>
         <Routing/>
     </div>
 }
