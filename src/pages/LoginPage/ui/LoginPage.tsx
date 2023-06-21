@@ -1,7 +1,9 @@
 import React, {useRef} from 'react';
-import {useDispatch} from "react-redux";
 import style from './LoginPage.module.css'
-import {useForm} from "react-hook-form";
+import {SubmitHandler, useForm} from "react-hook-form";
+import {useAppDispatch, useAppSelector} from "../../../app/store/store";
+import {Navigate} from 'react-router-dom';
+import {loginTC} from "../model/auth-reducer";
 
 export interface LoginDataType {
     email: string,
@@ -11,7 +13,8 @@ export interface LoginDataType {
 
 const LoginPage = () => {
 
-    const dispatch = useDispatch();
+    const isAuth = useAppSelector(state => state.auth.isLoggedIn)
+    const dispatch = useAppDispatch();
 
     const {
         register,
@@ -25,8 +28,17 @@ const LoginPage = () => {
             rememberMe: false,
         },
     });
+
     const password = useRef({});
     password.current = watch('password', '');
+
+    const onSubmit: SubmitHandler<LoginDataType> = ({email, password, rememberMe}: LoginDataType) => {
+        dispatch(loginTC({email, password, rememberMe}))
+    };
+
+    if (isAuth) {
+        return <Navigate to={'/test'}/>
+    }
 
     return (
         <div className={style.loginPage}>
@@ -34,6 +46,7 @@ const LoginPage = () => {
                 Sign in
             </h1>
             <div className={style.loginBlock}>
+
                 <div className={style.inputBlock}>
                     Email address
                     <input
@@ -42,6 +55,7 @@ const LoginPage = () => {
                         className={style.Input}/>
                     {errors.email && <span className={style.error}>Email required</span>}
                 </div>
+
                 <div className={style.inputBlock}>
                     Password
                     <input
@@ -50,6 +64,7 @@ const LoginPage = () => {
                         className={style.Input}/>
                     {errors.password && <span className={style.error}>Password required</span>}
                 </div>
+
                 <div className={style.rememberMeBlock}>
                     <input
                         {...register('rememberMe')}
@@ -58,7 +73,10 @@ const LoginPage = () => {
                     Remember me?
                 </div>
 
-                <button type={'submit'} className={style.LoginButton}> Sign in</button>
+                <button type={'submit'} className={style.LoginButton} onClick={handleSubmit(onSubmit)}>
+                    Sign in
+                </button>
+
             </div>
             <div className={style.registerRedirectBlock}>
                 No account yet? <a href={'https://social-network.samuraijs.com/signUp'}>Sign up</a>.

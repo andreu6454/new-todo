@@ -1,6 +1,24 @@
 .header{
+    display: flex;
     background-color: #010409;
     height: 100px;
     width: 100%;
     content: "";
+    justify-content: flex-end;
+    align-items: center;
+}
+.button{
+    width: 60px;
+    height: 30px;
+    border-radius: 6px;
+    margin-right: 20px;
+    background-color: #282c34;
+    border: 1px solid #c9d1d9;
+    color: #c9d1d9;
+}
+.button:hover{
+    opacity: 20%;
+}
+.button:active{
+    transform: scale(90%);
 }
