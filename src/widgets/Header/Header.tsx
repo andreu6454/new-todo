@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Header.module.css'
-import {useAppDispatch, useAppSelector} from "../../app/store/store";
+import {useAppDispatch, useAppSelector} from "../../shared/store/store";
 import {logoutTC} from "../../pages/LoginPage/model/auth-reducer";
 
 const Header = () => {

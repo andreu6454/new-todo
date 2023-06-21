@@ -1,7 +1,8 @@
 import TodolistItem from "../entities/TodolistItem/TodolistItem";
-import {useAppSelector} from "../app/store/store";
+import {useAppDispatch, useAppSelector} from "../shared/store/store";
 import {Navigate} from "react-router-dom";
-import React from "react";
+import React, {useEffect} from "react";
+import {initializeAppTC} from "../app/model/app-reducer";
 
 
 const testData = {
@@ -11,7 +12,19 @@ const testData = {
     title: 'Title'
 }
 export const TestPage = () => {
+    const dispatch = useAppDispatch()
+
     const isAuth = useAppSelector(state => state.auth.isLoggedIn)
+    const isInitialized = useAppSelector(state => state.app.isInitialized)
+
+    useEffect(()=>{
+        dispatch(initializeAppTC())
+    },[])
+
+
+    if(!isInitialized){
+        // добавить загрузку
+    }
 
     if (!isAuth) {
         return <Navigate to={'/login'}/>

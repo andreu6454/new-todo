@@ -1,7 +1,7 @@
 import React, {useRef} from 'react';
 import style from './LoginPage.module.css'
 import {SubmitHandler, useForm} from "react-hook-form";
-import {useAppDispatch, useAppSelector} from "../../../app/store/store";
+import {useAppDispatch, useAppSelector} from "../../../shared/store/store";
 import {Navigate} from 'react-router-dom';
 import {loginTC} from "../model/auth-reducer";
 
