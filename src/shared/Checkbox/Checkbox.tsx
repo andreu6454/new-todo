@@ -1,12 +1,13 @@
-import React from 'react';
+import React, {ChangeEvent} from 'react';
 import styles from './Checkbox.module.css'
 
 type CheckboxPropsType = {
-    isChecked: boolean
+    isChecked: boolean,
+    onChangeHandle: (e: ChangeEvent<HTMLInputElement>) => void
 }
-const Checkbox = ({isChecked}:CheckboxPropsType) => {
+const Checkbox = ({isChecked,onChangeHandle}:CheckboxPropsType) => {
     return (
-        <input type={'checkbox'}>
+        <input type={'checkbox'} onChange={onChangeHandle} checked={isChecked}>
 
         </input>
     );

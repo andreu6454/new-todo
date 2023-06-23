@@ -37,7 +37,7 @@ const LoginPage = () => {
     };
 
     if (isAuth) {
-        return <Navigate to={'/test'}/>
+        return <Navigate to={'/'}/>
     }
 
     return (

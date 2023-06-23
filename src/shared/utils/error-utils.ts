@@ -1,5 +1,6 @@
 import { Dispatch } from 'redux'
 import {setErrorAC, setStatusAC} from "../../app/model/app-reducer";
+import type {ResponseType} from '../../entities/TodolistItem/api/todolists-api'
 
 type ThunkAPIType = {
     dispatch: (action: any) => any;
@@ -8,7 +9,7 @@ type ThunkAPIType = {
 };
 
 // generic function
-export const handleServerAppError = (data: any, dispatch: ErrorUtilsDispatchType) => {
+export const handleServerAppError =  <T>(data: ResponseType<T>, dispatch: ErrorUtilsDispatchType) => {
     if (data.messages.length) {
         dispatch(setErrorAC({error: data.messages[0]}))
     } else {
