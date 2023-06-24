@@ -12,7 +12,6 @@ export interface LoginDataType {
 }
 
 const LoginPage = () => {
-
     const isAuth = useAppSelector(state => state.auth.isLoggedIn)
     const dispatch = useAppDispatch();
 
@@ -35,6 +34,7 @@ const LoginPage = () => {
     const onSubmit: SubmitHandler<LoginDataType> = ({email, password, rememberMe}: LoginDataType) => {
         dispatch(loginTC({email, password, rememberMe}))
     };
+
 
     if (isAuth) {
         return <Navigate to={'/'}/>

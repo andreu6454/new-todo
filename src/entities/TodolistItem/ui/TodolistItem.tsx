@@ -60,18 +60,13 @@ const TodolistItem = ({todolist}: TodolistItemPropsType) => {
     return (
         <div className={styles.TodolistItem}>
 
-            <h3>
+            <h3 className={styles.title}>
                 <EditableSpan key={v1()} title={todolist.title} callBack={changeTodolistTitle}/>
                 <button aria-label="delete" onClick={removeTodolist}
                         disabled={todolist.entityStatus === "loading"}>
                     X
                 </button>
             </h3>
-            <span className={styles.title}>
-
-                {todolist.title}
-
-            </span>
 
             <div className={styles.taskContainer}>
                 {

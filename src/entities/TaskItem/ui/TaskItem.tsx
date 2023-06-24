@@ -30,13 +30,19 @@ const TaskItem = ( props: {task: TaskType}) => {
 
     return (
         <div className={props.task.status === TaskStatuses.Completed ? styles.TaskItemIsDone : styles.TaskItem} >
-            <Checkbox isChecked={props.task.status === TaskStatuses.Completed} onChangeHandle={onChangeHandler}/>
 
-            <EditableSpan title={props.task.title} callBack={onTitleChangeHandler}/>
+            <div>
+
+                <Checkbox isChecked={props.task.status === TaskStatuses.Completed} onChangeHandle={onChangeHandler}/>
+
+                <EditableSpan title={props.task.title} callBack={onTitleChangeHandler}/>
+
+            </div>
 
             <button aria-label="delete" onClick={onClickHandler} >
                 X
             </button>
+
         </div>
     );
 };

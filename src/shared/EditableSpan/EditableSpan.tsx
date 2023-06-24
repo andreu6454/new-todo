@@ -1,4 +1,5 @@
 import React, {ChangeEvent, memo, useCallback, useState} from 'react';
+import styles from './EditableSpan.module.css'
 
 type EditableSpanType = {
     title: string
@@ -32,7 +33,7 @@ export const EditableSpan = memo((props: EditableSpanType) => {
 
     return (
         edit
-            ? <input className={'EditableInput'} type={"text"} value={newTitle} onChange={onChangeHandler}
+            ? <input className={styles.Input} type={"text"} value={newTitle} onChange={onChangeHandler}
                      onBlur={toggleHandler} autoFocus/>
             :
             <span onDoubleClick={toggleHandler}>

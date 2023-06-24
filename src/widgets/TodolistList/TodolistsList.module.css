@@ -1,0 +1,8 @@
+.TodolistsList{
+    box-sizing: border-box;
+    padding: 20px 100px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
