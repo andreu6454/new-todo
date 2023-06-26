@@ -1,6 +1,6 @@
 import style from './PreLoader.module.css'
 import React from 'react';
-import loader from '../Assets/tail-spin.svg'
+import loader from '../../assets/tail-spin.svg'
 
 
 const PreLoader = () => {

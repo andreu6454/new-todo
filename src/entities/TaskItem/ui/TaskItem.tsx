@@ -1,6 +1,6 @@
 import React, {ChangeEvent, useCallback} from 'react';
-import Checkbox from "../../../shared/Checkbox/Checkbox";
-import {EditableSpan} from "../../../shared/EditableSpan/EditableSpan";
+import Checkbox from "../../../shared/components/Checkbox/Checkbox";
+import {EditableSpan} from "../../../shared/components/EditableSpan/EditableSpan";
 import styles from './TaskItem.module.css'
 import {TaskStatuses, TaskType} from "../../TodolistItem/api/todolists-api";
 import {useAppDispatch} from "../../../shared/store/store";

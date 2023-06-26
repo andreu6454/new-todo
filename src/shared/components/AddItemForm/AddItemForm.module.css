@@ -1,0 +1,31 @@
+.AddItemForm{
+    width: max-content;
+    padding: 5px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+.AddItemInput{
+    width: 130px;
+    border-radius: 6px;
+    border: 1px solid rgb(48, 54, 61);
+    min-height: 28px;
+    background-color: #282c34;
+    color: #c9d1d9;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+.AddItemButton{
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    background-color: #282c34;
+    border: 1px solid #c9d1d9;
+    color: #c9d1d9;
+    margin-left: 10px;
+}
+.AddItemButton:hover{
+    opacity: 20%;
+}
+.AddItemButton:active{
+    transform: scale(90%);
+}

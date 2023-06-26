@@ -6,14 +6,14 @@ import {
     removeTodolistTC,
     TodolistDomainType
 } from "../model/todolists-reducer";
-import {EditableSpan} from "../../../shared/EditableSpan/EditableSpan";
+import {EditableSpan} from "../../../shared/components/EditableSpan/EditableSpan";
 import TaskItem from "../../TaskItem/ui/TaskItem";
 import {addTaskTC, fetchTasksTC} from "../../TaskItem/model/taskItem-reducer";
 import {useAppDispatch, useAppSelector} from "../../../shared/store/store";
 import {TaskStatuses, TaskType} from "../api/todolists-api";
 import {v1} from 'uuid'
-import {AddItemForm} from "../../../shared/AddItemForm/AddItemForm";
-import PreLoader from "../../../shared/PreLoader/PreLoader";
+import {AddItemForm} from "../../../shared/components/AddItemForm/AddItemForm";
+import PreLoader from "../../../shared/components/PreLoader/PreLoader";
 
 type TodolistItemPropsType = {
     todolist: TodolistDomainType
@@ -69,7 +69,7 @@ const TodolistItem = ({todolist}: TodolistItemPropsType) => {
         <div className={styles.TodolistItem}>
             <h3 className={styles.title}>
                 <EditableSpan key={v1()} title={todolist.title} callBack={changeTodolistTitle}/>
-                <button aria-label="delete" onClick={removeTodolist}>
+                <button className={styles.DeleteButton} onClick={removeTodolist}>
                     X
                 </button>
             </h3>

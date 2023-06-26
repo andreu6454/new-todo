@@ -4,7 +4,7 @@ import LoginPage from "./LoginPage/ui/LoginPage";
 import MainPage from "./MainPage/MainPage";
 import {useAppDispatch, useAppSelector} from "../shared/store/store";
 import {initializeAppTC} from "../app/model/app-reducer";
-import PreLoader from "../shared/PreLoader/PreLoader";
+import PreLoader from "../shared/components/PreLoader/PreLoader";
 
 
 export const Routing = () => {

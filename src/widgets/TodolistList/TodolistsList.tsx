@@ -3,7 +3,7 @@ import {fetchTodolistsTC, TodolistDomainType} from "../../entities/TodolistItem/
 import {useAppDispatch, useAppSelector} from "../../shared/store/store";
 import TodolistItem from "../../entities/TodolistItem/ui/TodolistItem";
 import styles from './TodolistsList.module.css'
-import PreLoader from "../../shared/PreLoader/PreLoader";
+import PreLoader from "../../shared/components/PreLoader/PreLoader";
 
 const TodolistsList = () => {
 

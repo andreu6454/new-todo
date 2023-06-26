@@ -4,7 +4,7 @@
     height: 100px;
     width: 100%;
     content: "";
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
 }
 .button{
@@ -21,4 +21,7 @@
 }
 .button:active{
     transform: scale(90%);
+}
+.AddNewTodo{
+    margin-left: 100px;
 }

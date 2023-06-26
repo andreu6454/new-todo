@@ -2,7 +2,7 @@ import React, {useCallback} from 'react';
 import styles from './Header.module.css'
 import {useAppDispatch, useAppSelector} from "../../shared/store/store";
 import {logoutTC} from "../../pages/LoginPage/model/auth-reducer";
-import {AddItemForm} from "../../shared/AddItemForm/AddItemForm";
+import {AddItemForm} from "../../shared/components/AddItemForm/AddItemForm";
 import {addTodolistTC} from "../../entities/TodolistItem/model/todolists-reducer";
 
 const Header = () => {
@@ -16,13 +16,17 @@ const Header = () => {
     const logoutHandler = () => {
         dispatch(logoutTC())
     }
-    if(!isAuth){
+    if (!isAuth) {
         return <></>
     }
     return (
         <div className={styles.header}>
-            <AddItemForm callBack={addTodolist} />
+            <div className={styles.AddNewTodo}>
+                Add new todolist:
+                <AddItemForm callBack={addTodolist}/>
+            </div>
             <button className={styles.button} onClick={logoutHandler}>log out</button>
+
         </div>
     );
 };

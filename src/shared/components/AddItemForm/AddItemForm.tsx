@@ -41,9 +41,10 @@ export const AddItemForm = memo((props: AddItemProps) => {
                 onKeyPress={onKeyPressHandler}
                 disabled={props.disabled}
                 className={styles.AddItemInput}
-
+                placeholder={'click to type'}
             />
             <button
+                className={styles.AddItemButton}
                 onClick={addTask}
                 disabled={props.disabled}>+</button>
         </div>

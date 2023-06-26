@@ -3,7 +3,7 @@ import TodolistsList from "../../widgets/TodolistList/TodolistsList";
 import Header from "../../widgets/Header/Header";
 import {Navigate} from "react-router-dom";
 import {useAppSelector} from "../../shared/store/store";
-import PreLoader from "../../shared/PreLoader/PreLoader";
+import PreLoader from "../../shared/components/PreLoader/PreLoader";
 
 const MainPage = () => {
 
