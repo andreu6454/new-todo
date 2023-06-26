@@ -4,9 +4,12 @@
     display: flex;
     flex-direction: column;
     width: max-content;
+    min-width: 220px;
+    min-height: 300px;
     background-color: #161b22;
     border: 1px solid #242424;
     border-radius: 5px;
+    align-items: center;
 }
 
 .title{

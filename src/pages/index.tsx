@@ -4,6 +4,7 @@ import LoginPage from "./LoginPage/ui/LoginPage";
 import MainPage from "./MainPage/MainPage";
 import {useAppDispatch, useAppSelector} from "../shared/store/store";
 import {initializeAppTC} from "../app/model/app-reducer";
+import PreLoader from "../shared/PreLoader/PreLoader";
 
 
 export const Routing = () => {
@@ -16,7 +17,7 @@ export const Routing = () => {
     },[])
 
     if(!isInitialized){
-        return <h1> loading... </h1>
+        return <PreLoader/>
     }
 
     return (

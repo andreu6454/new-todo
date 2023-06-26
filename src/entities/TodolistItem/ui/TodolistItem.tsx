@@ -12,6 +12,8 @@ import {addTaskTC, fetchTasksTC} from "../../TaskItem/model/taskItem-reducer";
 import {useAppDispatch, useAppSelector} from "../../../shared/store/store";
 import {TaskStatuses, TaskType} from "../api/todolists-api";
 import {v1} from 'uuid'
+import {AddItemForm} from "../../../shared/AddItemForm/AddItemForm";
+import PreLoader from "../../../shared/PreLoader/PreLoader";
 
 type TodolistItemPropsType = {
     todolist: TodolistDomainType
@@ -57,16 +59,22 @@ const TodolistItem = ({todolist}: TodolistItemPropsType) => {
             return t.status === TaskStatuses.Completed;
         });
     }
+
+    if (todolist.entityStatus === "loading") {
+        return <div className={styles.TodolistItem}>
+            <PreLoader/>
+        </div>
+    }
     return (
         <div className={styles.TodolistItem}>
-
             <h3 className={styles.title}>
                 <EditableSpan key={v1()} title={todolist.title} callBack={changeTodolistTitle}/>
-                <button aria-label="delete" onClick={removeTodolist}
-                        disabled={todolist.entityStatus === "loading"}>
+                <button aria-label="delete" onClick={removeTodolist}>
                     X
                 </button>
             </h3>
+
+            <AddItemForm callBack={addTask}/>
 
             <div className={styles.taskContainer}>
                 {
