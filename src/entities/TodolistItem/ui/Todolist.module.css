@@ -21,6 +21,10 @@
 
 .taskContainer{
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .buttonContainer{
@@ -42,4 +46,8 @@
 }
 .DeleteButton:active{
     transform: scale(90%);
+}
+.NoTasksMessage{
+    color: #c9d1d9;
+    font-size: 20px;
 }

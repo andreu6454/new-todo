@@ -20,6 +20,7 @@ type TodolistItemPropsType = {
 }
 
 const TodolistItem = ({todolist}: TodolistItemPropsType) => {
+
     useEffect(() => {
         dispatch(fetchTasksTC({todolistId: todolist.id}))
     }, [todolist.id])
@@ -77,10 +78,10 @@ const TodolistItem = ({todolist}: TodolistItemPropsType) => {
             <AddItemForm callBack={addTask}/>
 
             <div className={styles.taskContainer}>
-                {
-                    tasksForTodolist.map(t => {
-                        return <TaskItem key={t.id} task={t}/>
-                    })
+                {tasksForTodolist.length === 0 && <div className={styles.NoTasksMessage}> Тасок нет </div>}
+                {tasksForTodolist.map(t => {
+                    return <TaskItem key={t.id} task={t}/>
+                })
                 }
             </div>
 
@@ -96,11 +97,3 @@ const TodolistItem = ({todolist}: TodolistItemPropsType) => {
 };
 
 export default TodolistItem;
-
-
-// return <div>
-//
-//
-//     <AddItemForm callBack={addTask} disabled={todolist.entityStatus === "loading"}/>
-//
-// </div>
