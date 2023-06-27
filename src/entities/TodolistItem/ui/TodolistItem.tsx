@@ -83,7 +83,12 @@ const TodolistItem = ({todolist}: TodolistItemPropsType) => {
             <AddItemForm callBack={addTask}/>
 
             <div ref={parent} className={styles.taskContainer}>
-                {tasksForTodolist.length === 0 && <div className={styles.NoTasksMessage}> Тасок нет </div>}
+                {tasksForTodolist.length === 0 &&
+                    <div className={styles.NoTasksMessage}>
+                        <h5>
+                            Здесь пока пусто!
+                        </h5>
+                    </div>}
                 {tasksForTodolist.map(t => {
                     return <TaskItem key={t.id} task={t}/>
                 })

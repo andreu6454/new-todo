@@ -51,8 +51,9 @@
 .NoTasksMessage{
     color: #c9d1d9;
     font-size: 20px;
-}
+    text-align: center;
 
+}
 .PreLoader{
     position: relative;
     z-index: 1111111;
