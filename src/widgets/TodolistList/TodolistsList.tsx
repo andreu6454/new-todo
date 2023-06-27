@@ -4,9 +4,10 @@ import {useAppDispatch, useAppSelector} from "../../shared/store/store";
 import TodolistItem from "../../entities/TodolistItem/ui/TodolistItem";
 import styles from './TodolistsList.module.css'
 import PreLoader from "../../shared/components/PreLoader/PreLoader";
+import {useAutoAnimate} from "@formkit/auto-animate/react";
 
 const TodolistsList = () => {
-
+    const [parent] = useAutoAnimate()
     useEffect(() => {
         if (!isLogined) {
             return
@@ -20,11 +21,11 @@ const TodolistsList = () => {
     const isLoading = useAppSelector(state => state.app.status)
     const dispatch = useAppDispatch()
 
-    if(isLoading === 'loading'){
-        return <PreLoader/>
-    }
+    // if(isLoading === 'loading'){
+    //     return <PreLoader/>
+    // }
     return (
-        <div className={styles.TodolistsList}>
+        <div ref={parent} className={styles.TodolistsList}>
             {todolists.map((el) => {
                 return (
                     <TodolistItem

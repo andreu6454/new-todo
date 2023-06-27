@@ -14,12 +14,14 @@ import {TaskStatuses, TaskType} from "../api/todolists-api";
 import {v1} from 'uuid'
 import {AddItemForm} from "../../../shared/components/AddItemForm/AddItemForm";
 import PreLoader from "../../../shared/components/PreLoader/PreLoader";
+import {useAutoAnimate} from "@formkit/auto-animate/react";
 
 type TodolistItemPropsType = {
     todolist: TodolistDomainType
 }
 
 const TodolistItem = ({todolist}: TodolistItemPropsType) => {
+    const [parent] = useAutoAnimate()
 
     useEffect(() => {
         dispatch(fetchTasksTC({todolistId: todolist.id}))
@@ -61,11 +63,12 @@ const TodolistItem = ({todolist}: TodolistItemPropsType) => {
         });
     }
 
-    if (todolist.entityStatus === "loading") {
-        return <div className={styles.TodolistItem}>
-            <PreLoader/>
-        </div>
-    }
+    // if (todolist.entityStatus === "loading") {
+    //     return <div className={styles.TodolistItem}>
+    //         <PreLoader/>
+    //     </div>
+    // }
+
     return (
         <div className={styles.TodolistItem}>
             <h3 className={styles.title}>
@@ -77,7 +80,7 @@ const TodolistItem = ({todolist}: TodolistItemPropsType) => {
 
             <AddItemForm callBack={addTask}/>
 
-            <div className={styles.taskContainer}>
+            <div ref={parent} className={styles.taskContainer}>
                 {tasksForTodolist.length === 0 && <div className={styles.NoTasksMessage}> Тасок нет </div>}
                 {tasksForTodolist.map(t => {
                     return <TaskItem key={t.id} task={t}/>
