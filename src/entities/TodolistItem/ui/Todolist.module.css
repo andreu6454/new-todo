@@ -10,6 +10,7 @@
     border: 1px solid #242424;
     border-radius: 5px;
     align-items: center;
+    position: relative;
 }
 
 .title{
@@ -50,4 +51,15 @@
 .NoTasksMessage{
     color: #c9d1d9;
     font-size: 20px;
+}
+
+.PreLoader{
+    position: relative;
+    z-index: 1111111;
+    width: 0;
+    height: 0;
+    top: 50%;
+}
+.Opacity{
+    opacity: 20%;
 }

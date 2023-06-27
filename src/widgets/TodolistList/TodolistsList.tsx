@@ -19,22 +19,38 @@ const TodolistsList = () => {
 
     const isLogined = useAppSelector<boolean>(state => state.auth.isLoggedIn)
     const isLoading = useAppSelector(state => state.app.status)
-    const dispatch = useAppDispatch()
 
-    // if(isLoading === 'loading'){
-    //     return <PreLoader/>
-    // }
+    const dispatch = useAppDispatch()
     return (
-        <div ref={parent} className={styles.TodolistsList}>
-            {todolists.map((el) => {
-                return (
-                    <TodolistItem
-                        key={el.id}
-                        todolist={el}
-                    />
-                )
-            })
+        <div className={isLoading === 'loading' ? styles.Opacity : ''}>
+            {isLoading === 'loading' &&
+                <div className={styles.PreLoader}>
+                    <PreLoader/>
+                </div>
             }
+
+            <div ref={parent} className={styles.TodoContainer}>
+                {!!todolists.length && todolists.map((el) => {
+                    return (
+                        <TodolistItem
+                            key={el.id}
+                            todolist={el}
+                        />
+                    )
+                })
+                }
+                {!(todolists.length) &&
+                    <div className={styles.EmptyMessage}>
+                        <h2>
+                             Здесь пока пусто!
+                        </h2>
+                        <h3>
+                            Но вы всегда можете что-то добавить
+                        </h3>
+                    </div>
+                }
+            </div>
+
         </div>
     );
 };

@@ -62,15 +62,17 @@ const TodolistItem = ({todolist}: TodolistItemPropsType) => {
             return t.status === TaskStatuses.Completed;
         });
     }
-
-    // if (todolist.entityStatus === "loading") {
-    //     return <div className={styles.TodolistItem}>
-    //         <PreLoader/>
-    //     </div>
-    // }
-
     return (
-        <div className={styles.TodolistItem}>
+        <div
+            className={todolist.entityStatus === "loading" ? `${styles.TodolistItem} ${styles.Opacity}` : styles.TodolistItem}>
+
+
+            {todolist.entityStatus === "loading" &&
+                <div className={styles.PreLoader}>
+                    <PreLoader/>
+                </div>}
+
+
             <h3 className={styles.title}>
                 <EditableSpan key={v1()} title={todolist.title} callBack={changeTodolistTitle}/>
                 <button className={styles.DeleteButton} onClick={removeTodolist}>

@@ -1,8 +1,25 @@
-.TodolistsList{
+.TodoContainer{
     box-sizing: border-box;
     padding: 20px 100px;
     width: 100vw;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    position: relative;
+}
+
+.PreLoader{
+    position: relative;
+    z-index: 1111111;
+    width: 0;
+    height: 0;
+    left: 50%;
+    top: 50vh;
+}
+.Opacity{
+    opacity: 20%;
+}
+.EmptyMessage{
+    text-align: center;
+    margin-top: 20vh;
 }
