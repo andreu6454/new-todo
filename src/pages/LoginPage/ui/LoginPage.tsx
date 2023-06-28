@@ -80,6 +80,9 @@ const LoginPage = () => {
             </div>
             <div className={style.registerRedirectBlock}>
                 No account yet? <a href={'https://social-network.samuraijs.com/signUp'}>Sign up</a>.
+                <p>or use common test account credentials:</p>
+                <p>Email: free@samuraijs.com</p>
+                <p>Password: free</p>
             </div>
         </div>
     );

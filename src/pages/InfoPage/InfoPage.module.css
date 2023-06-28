@@ -1,0 +1,25 @@
+.InfoPage{
+    padding: 60px 100px ;
+    color: #c9d1d9;
+
+}
+.InfoPageTitle{
+    font-size: 30px;
+    font-weight: bold;
+}
+.Container{
+    width: 60vw;
+    min-height: 40vh;
+    border-radius: 6px;
+    border: 1px solid #282c34;
+    margin: auto;
+    font-size: 16px;
+    padding: 20px 40px 40px 40px;
+}
+.ButtonContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+}

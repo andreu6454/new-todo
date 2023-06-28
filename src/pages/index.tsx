@@ -5,6 +5,7 @@ import MainPage from "./MainPage/MainPage";
 import {useAppDispatch, useAppSelector} from "../shared/store/store";
 import {initializeAppTC} from "../app/model/app-reducer";
 import PreLoader from "../shared/components/PreLoader/PreLoader";
+import InfoPage from "./InfoPage/InfoPage";
 
 
 export const Routing = () => {
@@ -24,6 +25,7 @@ export const Routing = () => {
         <Routes>
             <Route path={'/login'} element={<LoginPage/>}/>
             <Route path={'/'} element={<MainPage/>}/>
+            <Route path={'/info'} element={<InfoPage/>}/>
             <Route path={'*'} element={<div> ///// 404 \\\\\</div>}/>
         </Routes>
     );
