@@ -27,7 +27,7 @@ const InfoPage = () => {
                 Это позволяет пользователям эффективно управлять своими задачами и организовывать свою работу или личные дела.
             </div>
 
-            <div className={styles.ButtonContainer}>
+            <div className={styles.LinkContainer}>
                 <a href={'/'}>На Главную</a>
             </div>
 
