@@ -1,14 +1,14 @@
 import {ReactNode, Suspense} from "react";
-import { BrowserRouter } from "react-router-dom";
+import {HashRouter} from "react-router-dom";
 import {Provider} from "react-redux";
 import {store} from "../../shared/store/store";
 
 export const withRouter = (component: () => ReactNode) => () => (
     <Provider store={store}>
-        <BrowserRouter>
+        <HashRouter>
             <Suspense fallback="Loading...">
                 {component()}
             </Suspense>
-        </BrowserRouter>
+        </HashRouter>
     </Provider>
 );
