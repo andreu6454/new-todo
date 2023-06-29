@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './NavigationItem.module.css'
+import {NavLink} from "react-router-dom";
 
 type propsType = {
     title: string,
@@ -8,7 +9,7 @@ type propsType = {
 }
 const NavigationItem = ({title, link, svgPath}: propsType) => {
     return (
-        <a href={link} className={styles.Link}>
+        <NavLink to={link} className={({isActive}) => isActive ? styles.ActiveLink : styles.Link}>
             <svg fill='currentColor' version="1.1" width="16" height="16">
                 <path
                     d={svgPath}></path>
@@ -16,7 +17,7 @@ const NavigationItem = ({title, link, svgPath}: propsType) => {
             <span className={styles.Title}>
                     {title}
                 </span>
-        </a>
+        </NavLink>
     );
 };
 
