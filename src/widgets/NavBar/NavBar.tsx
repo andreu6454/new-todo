@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './NavBar.module.css'
 import {useAppDispatch, useAppSelector} from "../../shared/store/store";
 import {setNavBarOpenAC} from "../../app/model/app-reducer";
-import NavigationItem from "./NavigationItem/NavigationItem";
+import NavigationItem from "../../entities/NavigationItem/NavigationItem";
 
 const NavBar = () => {
     const isNavBarOpen = useAppSelector(state => state.app.isNavBarOpen)

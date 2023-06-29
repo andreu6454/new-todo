@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './InfoPage.module.css'
+import ToMainButton from "../../shared/ToMainButton/ToMainButton";
 
 const InfoPage = () => {
 
@@ -26,11 +27,9 @@ const InfoPage = () => {
                 "Todolists" разработан с использованием <strong>React.js</strong> и <strong>CSS модулей</strong> для создания динамического и интуитивно понятного пользовательского интерфейса, дла анимаций использована библиотека <strong>AutoAnimate</strong>, для управления состоянием использован <strong>react-toolkit</strong>.
                 Это позволяет пользователям эффективно управлять своими задачами и организовывать свою работу или личные дела.
             </div>
-
             <div className={styles.LinkContainer}>
-                <a href={'/'}>На Главную</a>
+                <ToMainButton/>
             </div>
-
         </div>
     );
 };

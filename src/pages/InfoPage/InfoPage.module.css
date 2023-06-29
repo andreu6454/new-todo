@@ -22,19 +22,3 @@
     justify-content: center;
     margin-top: 5%;
 }
-.LinkContainer a{
-    padding: 5px 15px;
-    width: max-content;
-    border-radius: 6px;
-    text-align: center;
-    text-decoration: none;
-    background-color: #282c34;
-    border: 1px solid #c9d1d9;
-    color: #c9d1d9;
-}
-.LinkContainer a:hover{
-    opacity: 20%;
-}
-.LinkContainer a:active{
-    transform: scale(80%);
-}

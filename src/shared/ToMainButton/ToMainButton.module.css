@@ -1,0 +1,16 @@
+.Link{
+    padding: 5px 15px;
+    width: max-content;
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #282c34;
+    border: 1px solid #c9d1d9;
+    color: #c9d1d9;
+}
+.Link:hover{
+    opacity: 20%;
+}
+.Link:active{
+    transform: scale(80%);
+}

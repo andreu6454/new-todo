@@ -1,0 +1,17 @@
+.NotFoundPage{
+    width: 100vw;
+    min-height: 400px;
+    content: " ";
+    background-image: url('./background.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.LinkContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}

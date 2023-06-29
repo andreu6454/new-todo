@@ -8,6 +8,7 @@ import PreLoader from "../shared/components/PreLoader/PreLoader";
 import InfoPage from "./InfoPage/InfoPage";
 import NavBar from "../widgets/NavBar/NavBar";
 import Header from "../widgets/Header/Header";
+import NotFoundPage from "./404Page/404Page";
 
 
 export const Routing = () => {
@@ -31,7 +32,7 @@ export const Routing = () => {
                 <Route path={'/login'} element={<LoginPage/>}/>
                 <Route path={'/'} element={<MainPage/>}/>
                 <Route path={'/info'} element={<InfoPage/>}/>
-                <Route path={'*'} element={<div> ///// 404 \\\\\</div>}/>
+                <Route path={'*'} element={<NotFoundPage/>}/>
             </Routes>
         </>
 
