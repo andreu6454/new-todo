@@ -6,12 +6,14 @@ import {useAppDispatch, useAppSelector} from "../shared/store/store";
 import {initializeAppTC} from "../app/model/app-reducer";
 import PreLoader from "../shared/components/PreLoader/PreLoader";
 import InfoPage from "./InfoPage/InfoPage";
+import NavBar from "../widgets/NavBar/NavBar";
+import Header from "../widgets/Header/Header";
 
 
 export const Routing = () => {
     const dispatch = useAppDispatch()
 
-    const isInitialized = useAppSelector(state => state.app.isInitialized)
+    const {isInitialized} = useAppSelector(state => state.app)
 
     useEffect(()=>{
         dispatch(initializeAppTC())
@@ -22,11 +24,16 @@ export const Routing = () => {
     }
 
     return (
-        <Routes>
-            <Route path={'/login'} element={<LoginPage/>}/>
-            <Route path={'/'} element={<MainPage/>}/>
-            <Route path={'/info'} element={<InfoPage/>}/>
-            <Route path={'*'} element={<div> ///// 404 \\\\\</div>}/>
-        </Routes>
+        <>
+            <Header/>
+            <NavBar/>
+            <Routes>
+                <Route path={'/login'} element={<LoginPage/>}/>
+                <Route path={'/'} element={<MainPage/>}/>
+                <Route path={'/info'} element={<InfoPage/>}/>
+                <Route path={'*'} element={<div> ///// 404 \\\\\</div>}/>
+            </Routes>
+        </>
+
     );
 };

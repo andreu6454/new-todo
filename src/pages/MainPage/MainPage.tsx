@@ -1,6 +1,5 @@
 import React from 'react';
 import TodolistsList from "../../widgets/TodolistList/TodolistsList";
-import Header from "../../widgets/Header/Header";
 import {Navigate} from "react-router-dom";
 import {useAppSelector} from "../../shared/store/store";
 
@@ -12,7 +11,6 @@ const MainPage = () => {
         return <Navigate to={'/login'}/>
     }
     return <div>
-        <Header/>
         <TodolistsList/>
     </div>
 }

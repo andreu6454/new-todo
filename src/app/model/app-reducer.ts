@@ -8,7 +8,8 @@ export type RequestStatusType = 'idle' | 'loading' | 'succeeded' | 'failed'
 const initialState = {
     status: 'idle' as RequestStatusType,
     error: null as null | string,
-    isInitialized: false as boolean
+    isInitialized: false as boolean,
+    isNavBarOpen: false
 }
 
 const appSlice = createSlice({
@@ -23,6 +24,9 @@ const appSlice = createSlice({
         },
         setInitializedAC: (state, action: PayloadAction<{ isInitialized: boolean }>) => {
             state.isInitialized = action.payload.isInitialized
+        },
+        setNavBarOpenAC: (state, action: PayloadAction<{isOpen: boolean}>) => {
+            state.isNavBarOpen = action.payload.isOpen
         }
     },
     extraReducers(builder) {
@@ -50,6 +54,7 @@ export const appReducer = appSlice.reducer
 export const setStatusAC = appSlice.actions.setStatusAC
 export const setErrorAC = appSlice.actions.setErrorAC
 export const setInitializedAC = appSlice.actions.setInitializedAC
+export const setNavBarOpenAC = appSlice.actions.setNavBarOpenAC
 export const initializeAppTC = () => (dispatch: Dispatch) => {
     dispatch(setStatusAC({status: 'loading'}))
     authAPI.me().then(res => {

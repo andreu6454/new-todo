@@ -1,0 +1,65 @@
+.NavBar{
+    position: fixed;
+    z-index: 3;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.NavBarActive{
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 3;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(110,118,129,0.4);
+    transition: 0.5s;
+    opacity: 1;
+    pointer-events: all;
+}
+.NavBarContent.open{
+    transform: translate(0);
+    transition: 0.5s;
+}
+.NavBarContent{
+    width: 320px;
+    height: 100vh;
+    background-color: #161b22;
+    border-radius: 0 32px 32px 0;
+    padding: 20px;
+    box-sizing: border-box;
+    transform: translate(-320px);
+}
+.title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.button{
+    color: #7d8590;
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+}
+.button:hover{
+    background-color: #7d8590;
+    color: white;
+}
+
+.NavigationContainer{
+    padding-bottom: 10px;
+    width: 100%;
+    height: max-content;
+    border-bottom: 1px solid #7d8590;
+}

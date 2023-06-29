@@ -6,6 +6,9 @@
     content: "";
     justify-content: space-between;
     align-items: center;
+    color: #c9d1d9;
+    padding: 0 40px;
+    box-sizing: border-box;
 }
 .button{
     width: 60px;
@@ -22,6 +25,26 @@
 .button:active{
     transform: scale(90%);
 }
-.AddNewTodo{
-    margin-left: 100px;
+.MenuButton{
+    display: flex;
+    cursor: pointer;
+    border: 1px solid #30363d;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border-radius: 6px;
+    align-items: center;
+    justify-content: center;
+}
+.SvgButton{
+    color: #7d8590;
+    width: 16px;
+    height: 16px;
+    overflow: visible;
+}
+.MenuButton:hover{
+    border: 1px solid #c9d1d9;
+}
+.MenuButton:active{
+    border: 1px solid #30363d;
 }
