@@ -21,14 +21,18 @@ type TodolistItemPropsType = {
 }
 
 const TodolistItem = ({todolist}: TodolistItemPropsType) => {
+    const dispatch = useAppDispatch()
     const [parent] = useAutoAnimate()
 
-    useEffect(() => {
-        dispatch(fetchTasksTC({todolistId: todolist.id}))
-    }, [todolist.id])
+
 
     let tasks = useAppSelector<Array<TaskType>>(state => state.tasks[todolist.id]);
-    const dispatch = useAppDispatch()
+
+    useEffect(() => {
+        if(tasks.length === 0){
+            dispatch(fetchTasksTC({todolistId: todolist.id}))
+        }
+    }, [todolist.id, dispatch, tasks.length])
 
     const addTask = useCallback((title: string) => {
         dispatch(addTaskTC(title, todolist.id))
@@ -40,7 +44,7 @@ const TodolistItem = ({todolist}: TodolistItemPropsType) => {
         if (todolist.title !== title) {
             dispatch(changeTodolistTitleTC(todolist.id, title))
         }
-    }, [dispatch, todolist.id])
+    }, [dispatch, todolist.id, todolist.title])
     const onAllClickHandler = useCallback(() =>
         dispatch(changeTodolistFilterAC({id: todolist.id, filter: "all"})
         ), [dispatch, todolist.id]);

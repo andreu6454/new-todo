@@ -25,7 +25,7 @@ const TaskItem = ( props: {task: TaskType}) => {
         if(props.task.title !== newValue){
             dispatch(updateTaskTC(props.task.id, {title: newValue}, props.task.todoListId));
         }
-    }, [dispatch, props.task.id, props.task.todoListId])
+    }, [dispatch,props.task.title ,props.task.id, props.task.todoListId])
 
     return (
         <div className={props.task.status === TaskStatuses.Completed ? styles.TaskItemIsDone : styles.TaskItem} >

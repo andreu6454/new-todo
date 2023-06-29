@@ -8,19 +8,27 @@ import {useAutoAnimate} from "@formkit/auto-animate/react";
 
 const TodolistsList = () => {
     const [parent] = useAutoAnimate()
-    useEffect(() => {
-        if (!isLogined) {
-            return
-        }
-        dispatch(fetchTodolistsTC())
-    }, [])
+    const dispatch = useAppDispatch()
 
     const todolists = useAppSelector<Array<TodolistDomainType>>(state => state.todolists);
 
     const isLogined = useAppSelector<boolean>(state => state.auth.isLoggedIn)
+
+    useEffect(() => {
+        if (!isLogined) {
+            return
+        }
+        if(todolists.length === 0){
+            dispatch(fetchTodolistsTC())
+        }
+    }, [dispatch, isLogined, todolists.length])
+
+
+
+
     const isLoading = useAppSelector(state => state.app.status)
 
-    const dispatch = useAppDispatch()
+
     return (
         <div className={isLoading === 'loading' ? styles.Opacity : ''}>
             {isLoading === 'loading' &&
